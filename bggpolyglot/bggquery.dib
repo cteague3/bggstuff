@@ -1,0 +1,20 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null}]}}
+
+#!csharp
+
+var bggusername = "cteague3";
+var url = "https://www.boardgamegeek.com/xmlapi2/collection?username=" + bggusername +"&own=1&excludesubtype=boardgameexpansion&brief=0";
+display($"BGG URL={url}");
+
+#!csharp
+
+System.Xml.XmlDocument xmlResponse;
+using(var client=new System.Net.Http.HttpClient())
+{
+  var response=client.GetAsync(url);
+  response.Wait();
+  xmlResponse.LoadXml(response.Result.ToString());
+}
+display(xmlResponse);

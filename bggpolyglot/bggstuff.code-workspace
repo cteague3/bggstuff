@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"polyglot-notebook.defaultNotebookExtension": ".dib",
+		"polyglot-notebook.defaultNotebookLanguage": "csharp"
+	}
+}
