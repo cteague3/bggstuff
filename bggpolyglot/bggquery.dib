@@ -1,6 +1,6 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null}]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":["C#","c#"],"languageName":"C#","name":"csharp"},{"aliases":["js"],"languageName":"JavaScript","name":"javascript"},{"aliases":["frontend"],"name":"vscode"},{"aliases":[],"name":"webview"}]}}
 
 #!csharp
 
@@ -14,7 +14,7 @@ System.Xml.XmlDocument xmlResponse;
 using(var client=new System.Net.Http.HttpClient())
 {
   var response=client.GetAsync(url);
-  response.Wait();
+  response.Wait(5000);
   xmlResponse.LoadXml(response.Result.ToString());
 }
 display(xmlResponse);
